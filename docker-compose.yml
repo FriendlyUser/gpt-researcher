@@ -4,7 +4,11 @@ services:
     image: assafelovic/gpt-researcher
     build: ./
     environment: 
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      LLM_PROVIDER: ${LLM_PROVIDER}
       TAVILY_API_KEY: ${TAVILY_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      GEMINI_API_KEY: ${GOOGLE_API_KEY}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
     ports:
       - 8000:8000
