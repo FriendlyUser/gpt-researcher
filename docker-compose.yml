@@ -1,14 +1,16 @@
 version: '3'
 services:
   gpt-researcher:
-    image: assafelovic/gpt-researcher
+    image: kramer1346/gpt-researcher
     build: ./
-    environment: 
-      LLM_PROVIDER: ${LLM_PROVIDER}
-      TAVILY_API_KEY: ${TAVILY_API_KEY}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
-      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
-      GEMINI_API_KEY: ${GOOGLE_API_KEY}
-      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
+    env_file:
+      - .env
+    # environment: 
+    #   LLM_PROVIDER: ${LLM_PROVIDER}
+    #   TAVILY_API_KEY: ${TAVILY_API_KEY}
+    #   OPENAI_API_KEY: ${OPENAI_API_KEY}
+    #   GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    #   GEMINI_API_KEY: ${GOOGLE_API_KEY}
+    #   LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
     ports:
       - 8000:8000
